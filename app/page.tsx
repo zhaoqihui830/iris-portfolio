@@ -86,12 +86,6 @@ function SiteContent() {
 
   useEffect(() => {
     const handleWheel = (e: WheelEvent) => {
-      const strip = (e.target as HTMLElement).closest("[data-photo-strip]")
-      if (strip) {
-        strip.scrollLeft += e.deltaY
-        e.preventDefault()
-        return
-      }
       if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
         e.preventDefault()
         if (!scrollContainerRef.current) return
@@ -264,6 +258,9 @@ function SiteContent() {
 
       <style jsx global>{`
         div::-webkit-scrollbar { display: none; }
+        [data-photo-strip]::-webkit-scrollbar { display: block; height: 4px; }
+        [data-photo-strip]::-webkit-scrollbar-thumb { background-color: #A4E2C6; border-radius: 9999px; }
+        [data-photo-strip]::-webkit-scrollbar-track { background: transparent; }
       `}</style>
     </main>
   )

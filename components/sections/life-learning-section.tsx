@@ -156,7 +156,7 @@ function LifeGrid() {
       </div>
 
       <p className="mt-2 shrink-0 text-center font-mono text-xs text-foreground/30">
-        {lang === "zh" ? "← 滚轮/拖动浏览 · 点击放大 →" : "← Scroll or drag · Click to enlarge →"}
+        {lang === "zh" ? "← 拖动滑块浏览 · 点击放大 →" : "← Drag scrollbar · Click to enlarge →"}
       </p>
 
       {lightboxIndex !== null && (
